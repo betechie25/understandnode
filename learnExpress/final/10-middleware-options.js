@@ -7,10 +7,11 @@ const logger = require('./logger')
 const authorize = require('./authorize')
 const morgan = require('morgan') // Third party middleware
 
-//Instead of  passing logger in every route use app.use function
+//Instead of  passing logger and auth middleware  in every route use app.use function
 
-app.use([logger,authorize]);
+app.use([logger,authorize]); // Own middleware
 //app.use(morgan('tiny')) Use third party middleware
+//app.use(express.static('./public))  // Express Middleware
 
 //or we can write lyk this if we want to pass logger only to specific routes ex: only to api/ routes
 
